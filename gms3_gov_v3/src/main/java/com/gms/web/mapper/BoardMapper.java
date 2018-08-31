@@ -17,7 +17,6 @@ public interface BoardMapper{
 	public int count(Map<?,?> p) ;
 	public void update(Map<?,?> p) ;
 	public void delete(Map<?,?> p) ;
-	public ArticleDTO login(ArticleDTO p) ;
 	public int countPaging();
 	public ArticleDTO listCreterio();
 	public ArticleDTO listPage();

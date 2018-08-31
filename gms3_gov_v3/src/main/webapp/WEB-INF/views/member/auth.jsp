@@ -30,3 +30,17 @@
       </div>
     </nav>
   </div>
+  <script>
+  $('#mypage_btn').click(function(){
+		location.href = "${context}/member/retrieve";
+	});
+	$('#remove_btn').click(function(){
+		location.href = "${context}/move/auth/member/remove";
+	});
+	$('#home_btn').click(function(){
+		location.href = "${context}/move/auth/common/content";
+	});
+	$('#logout_btn').click(function(){
+		location.href = "${context}/member/logout";
+	});
+  </script>

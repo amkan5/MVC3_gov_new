@@ -30,3 +30,20 @@
       </div>
     </nav>
   </div>
+  <script>
+	$('#login_btn').click(function(){
+		location.href = '${context}/move/public/member/login';
+	});
+	$('#join_btn').click(function(){
+		location.href = '${context}/move/public/member/add';
+	});
+	$('#logout_btn').click(function(){
+		location.href = '${context}/move/home/common/content';
+	});
+	$('#home_btn').click(function(){
+		location.href = '${context}/move/home/common/content';
+	}); 
+	$('#board_btn').click(function(){
+		location.href = '${context}/move/home/board/read';
+	});
+  </script>

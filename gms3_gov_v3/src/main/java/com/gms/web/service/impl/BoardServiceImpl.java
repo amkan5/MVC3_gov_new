@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.gms.web.domain.ArticleDTO;
 import com.gms.web.domain.MemberDTO;
+import com.gms.web.mapper.BoardMapper;
 import com.gms.web.mapper.MemberMapper;
 import com.gms.web.service.BoardService;
 import com.gms.web.service.MemberService;
@@ -15,16 +16,14 @@ import com.gms.web.service.MemberService;
 
 @Service //스프링에서 꺼내와야함 
 public class BoardServiceImpl implements BoardService{
-
+	@Autowired BoardMapper BoardDAO;
 	@Override
 	public void insert(ArticleDTO p) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public List<?> selectList(Map<?, ?> p) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

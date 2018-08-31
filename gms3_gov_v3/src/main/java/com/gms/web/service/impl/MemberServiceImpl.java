@@ -49,13 +49,13 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public void modify(Map<?, ?> p) {
+	public void modify(MemberDTO p) {
 		memberDAO.update(p);
 		
 	}
 
 	@Override
-	public void remove(Map<?, ?> p) {
+	public void remove(MemberDTO p) {
 		memberDAO.delete(p);
 		
 	}

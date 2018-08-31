@@ -11,12 +11,12 @@ app = {
 		onCreate : ()=>{
 			app.setContentView();
 			//selector 떄문에 있으면 있고 없으면 없는거야 z
-			$('#login_btn').click(()=>{
+		/*	$('#login_btn').click(()=>{
 				location.href = app.x()+"/move/public/member/login";
 			});
 			$('#join_btn').click(()=>{
 				location.href = app.x()+"/move/public/member/add";
-			});
+			});*/
 		/*	
 		   $('#add_submit').click(function(){ //얘는 달러 쓰는순간 dom객체 html
 				alert(app.x()+"/member/add");
@@ -44,36 +44,40 @@ app = {
 				
 				//location.href = app.x()+"/member/login";
 			});
-			$('#logout_btn').click(()=>{
+			/*$('#logout_btn').click(()=>{
 				//id주고 value 
 			
 				//로그아웃 어케줌?? app.session.member("");
 				location.href = app.x()+"/move/home/common/content";
 			});
-			$('#mypage_btn').click(()=>{
+			$('#home_btn').click(()=>{
+				location.href = app.x()+"/move/home/common/content";
+			});*/
+		/*	$('#mypage_btn').click(()=>{
 				location.href = app.x()+"/move/auth/member/retrieve";
 			});
 			$('#remove_btn').click(()=>{
 				location.href = app.x()+"/move/home/common/content";
 			});
-			$('#home_btn').click(()=>{
-				location.href = app.x()+"/move/home/common/content";
-			});
-			$('#moveToUpdate').click(()=>{
-				/*$('#updateForm').attr(
-				);*/
-				/*$('#retriveForm').attr({
-					action: app.x()+"/member/retrieve",
+			*/
+			/*$('#moveToUpdate').click(()=>{
+				$('#retriveForm').attr({
+					action: app.x()+"/member/retrieve/modify",
 					method: "POST"	
-					}).submit();*/	
-				/*$('#updateForm').attr({
+					}).submit();	
+				$('#updateForm').attr({
 						'userid': app.m().userid,
-						'name': app.m().name});*/
-				location.href = app.x()+"/move/auth/member/modify";
+						'name': app.m().name});
+				//location.href = app.x()+"/move/auth/member/retrieve";
 			});
+			
 			$('#moveToDelete').click(()=>{
-				location.href = app.x()+"/move/auth/member/remove";
-			});
+				$('#retriveForm').attr({
+					action: app.x()+"/member/retrieve/remove",
+					method: "POST"	
+					}).submit();
+				//location.href = app.x()+"/move/auth/member/remove";
+			});*/
 			$('#modify_submit').click(()=>{
 				$('#updateForm').attr({
 					action: app.x()+"/member/modify",

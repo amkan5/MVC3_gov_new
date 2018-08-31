@@ -13,13 +13,8 @@
 			.addEventListener('click',function(){
 				var val = form.password.value;
 				if(val==='${user.password}'){
-					form.action = '${context}/member.do';
+					form.action = '${context}/member/remove';
 					form.method = 'post';
-					var node = document.createElement('input'); 
-						node.setAttribute('type','hidden');
-						node.setAttribute('name','action');
-						node.setAttribute('value','delete');
-					form.appendChild(node);
 					form.submit();
 				}else{
 					alert('비밀번호가 다릅니다!!')

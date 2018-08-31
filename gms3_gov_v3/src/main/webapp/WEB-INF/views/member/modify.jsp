@@ -7,21 +7,21 @@
 				<img  src="${img}/mypage/profile.png" alt="" />
 			</td>
 			<td style="width: 50px">ID</td>
-			<td id="userid"></td>
+			<td id="userid" name="userid" value="${user.userid}">${user.userid}</td>
 		</tr>
 		<tr>
 			<td>이름</td>
-			<td id="name"></td>
+			<td id="name" name="name" value="${user.name}">${user.name}</td>
 		</tr>
 		<tr>
 			<td>비밀번호</td>
 			<td>
-				<input id="password" type="text" name="password" placeholder="${member.password}"/>
+				<input id="password" type="text" name="password" value="${user.password}"/>
 			</td>
 		</tr>
 		<tr>
 			<td style="width: 50px;height: 50px">성별</td>
-			<td>${member.gender}</td>
+			<td id="gender" name="gender" value="${user.gender}">${user.gender}</td>
 			<td style="width: 50px;height: 50px">팀</td>
 			<td>
 	           <input type="radio" id="teamid_1" name="teamid" 
@@ -36,7 +36,7 @@
 		</tr>
 		<tr>
 			<td style="width: 50px;height: 50px">나이</td>
-			<td>${member.age}</td>
+			<td id="age" name="age" value="${user.age}">${user.age}</td>
 			<td style="width: 50px;height: 50px">역할</td>
 			<td>
 				<select name="roll" id="roll">
@@ -53,18 +53,20 @@
 	</div>
 	</form>
 <form method="POST" enctype="multipart/form-data" 
-		action="${context}/member.do?action=fileupload&page=retrieve">
+		action="${context}/user.do?action=fileupload&page=retrieve">
   파일업로드: <input type="file" name="upfile"><br/>
   <input type="submit" value="파일업로드"> 
 </form>
 <script>
-app.session.getmember();
- $('#userid').text(app.m().userid);
-$('#name').text(app.m().name); 
-console.log('modify에서 : '+app.session.getmember().userid);
+
+//app.session.getuser();
+/*  $('#userid').text(app.m().userid);
+$('#name').text(app.m().name);  */
+/* console.log('modify에서 : '+app.session.getuser().userid);
 console.log('modify에서2 : '+app.m().userid);
-console.log('${member}');
-/* var form = document.getElementById('updateForm');
+console.log('${user}'); */
+
+ var form = document.getElementById('updateForm');
 for(var i=1;i<=4;i++){
 	if(document.getElementById('teamid_'+i).value
 			==='${user.teamid}'){
@@ -82,7 +84,8 @@ form.team.setAttribute("selected","selected");
 	.addEventListener('click',function(){
 		alert('수정확인버튼 클릭함 !!');
 		// 업데이트 실행 하세요..DB 까지
-	}); */
+	}); 
+	
 </script>
 
 
