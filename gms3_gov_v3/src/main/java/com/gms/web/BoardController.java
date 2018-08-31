@@ -6,18 +6,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
+
 import com.gms.web.domain.MemberDTO;
 import com.gms.web.service.MemberService;
 
 @Controller
-@RequestMapping("/member")
-public class MemberController {
-	@Autowired MemberService memberService;
-	@RequestMapping(value="/add", method=RequestMethod.POST)
-	public String add(@ModelAttribute("member") MemberDTO member) {
-		System.out.println("add 진입");
-		System.out.println("name is "+member.getName());
-		memberService.add(member);
+@RequestMapping("/board")
+public class BoardController {
+	@RequestMapping("/add")
+	public String add() {
 		return "public:member/login.tiles";
 	}
 	@RequestMapping("/list")
@@ -25,9 +23,8 @@ public class MemberController {
 	@RequestMapping("/search")
 	public void search() {}
 	@RequestMapping("/retrieve")
-	public String retrieve(@ModelAttribute("member") MemberDTO member,
-			Model model) {
-		System.out.println("name is "+member.getName());
+	public String retrieve() {
+		//System.out.println("name is "+member.getName());
 		//업데이트로 갈지 딜리트로갈지 
 		return "auth:member/modify.tiles";
 	}
@@ -36,22 +33,19 @@ public class MemberController {
 	@RequestMapping("/modify")
 	public String modify(@ModelAttribute("member") MemberDTO member,
 			Model model) {
-		System.out.println("name is "+member.getName());
+		//System.out.println("name is "+member.getName());
 		return "auth:member/modify.tiles";
 	}
 	@RequestMapping("/remove")
-	public String remove(@ModelAttribute MemberDTO member,
-			Model model) {
+	public String remove() {
 		String path = "";
 		return path;
 	}
-	@RequestMapping(value="/login", method=RequestMethod.POST)
-	public String login(@ModelAttribute MemberDTO member,
-			Model model) {
+	@RequestMapping("/login")
+	public String login() {
 		/*@PathVariable String userid,
 		@PathVariable String password*/
-		String path = "";
-		System.out.println("login들어옴 ");
+/*		String path = "";
 		if(memberService.login(member)) {
 			model.addAttribute("member", 
 					memberService.retrieve(member.getUserid()));
@@ -60,8 +54,8 @@ public class MemberController {
 		}else {
 			System.out.println("로그인 실패");
 			path = "public:member/login.tiles";
-		}
-		return path;
+		}*/
+		return "public:member/login.tiles";
 	}
 	@RequestMapping("/logout")
 	public String logout() {
